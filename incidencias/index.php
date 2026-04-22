@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: listar.php");
         exit();
     } else {
-        $error = "Usuario o clave incorrectos";
+        $error = "Usuario o clave incorrectos.<br>Intenta nuevamente.<br><br>";
     }
 }
 ?>
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h1>Sistema de Tickets</h1>
 
         <?php if ($error): ?>
-            <div>⚠️ <?= $error ?> ⚠️</div>
+            <div style="color: #FF0000"><?= $error ?></div>
         <?php endif; ?>
 
         <form method="POST">
