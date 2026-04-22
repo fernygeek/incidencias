@@ -36,171 +36,44 @@ $incidencia = mysqli_fetch_assoc($resultado);
 <head>
     <meta charset="UTF-8">
     <title>Detalle de Incidencia</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f0f2f5;
-            min-height: 100vh;
-        }
-
-        .navbar {
-            background: #007bff;
-            color: white;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar h2 {
-            font-size: 20px;
-        }
-
-        .navbar-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 14px;
-        }
-
-        .btn {
-            padding: 8px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 14px;
-            display: inline-block;
-        }
-
-        .btn-danger {
-            background: #dc3545;
-            color: white;
-        }
-
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-        }
-
-        .btn:hover {
-            opacity: 0.85;
-        }
-
-        .container {
-            max-width: 750px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            padding: 30px;
-        }
-
-        .card h3 {
-            color: #333;
-            margin-bottom: 25px;
-            font-size: 22px;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-        }
-
-        .campo {
-            margin-bottom: 20px;
-        }
-
-        .campo label {
-            display: block;
-            font-size: 13px;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 5px;
-        }
-
-        .campo p {
-            font-size: 16px;
-            color: #333;
-        }
-
-        .prioridad {
-            display: inline-block;
-            padding: 5px 14px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .prioridad.Alta {
-            background: #ffe0e0;
-            color: #c0392b;
-        }
-
-        .prioridad.Media {
-            background: #fff4e0;
-            color: #d68910;
-        }
-
-        .prioridad.Baja {
-            background: #e0f7e9;
-            color: #1e8449;
-        }
-
-        .footer-btn {
-            margin-top: 30px;
-        }
-    </style>
 </head>
 
 <body>
 
     <!-- Barra de navegación -->
-    <div class="navbar">
-        <h2>🎫 Sistema de Tickets</h2>
-        <div class="navbar-right">
-            👤 <?= $_SESSION['usuario_nombre'] ?>
-            <a href="cerrar_sesion.php" class="btn btn-danger">Cerrar Sesión</a>
+    <div>
+        <h1>Sistema de Tickets</h1>
+        <div>
+            <?= $_SESSION['usuario_nombre'] ?>
+            <a href="cerrar_sesion.php">Cerrar Sesión</a>
         </div>
     </div>
 
-    <div class="container">
-        <div class="card">
-            <h3>📄 Detalle de Incidencia</h3>
+    <div>
+        <h3>Detalle de Incidencia</h3>
 
-            <div class="campo">
-                <label>ID</label>
-                <p>#<?= $incidencia['id'] ?></p>
-            </div>
+        <div>
+            <h4>ID</h4>
+            <p>#<?= $incidencia['id'] ?></p>
+        </div>
 
-            <div class="campo">
-                <label>Título</label>
-                <p><?= $incidencia['titulo'] ?></p>
-            </div>
+        <div>
+            <h4>Título</h4>
+            <p><?= $incidencia['titulo'] ?></p>
+        </div>
 
-            <div class="campo">
-                <label>Descripción</label>
-                <p><?= $incidencia['descripcion'] ?></p>
-            </div>
+        <div>
+            <h4>Descripción</h4>
+            <p><?= $incidencia['descripcion'] ?></p>
+        </div>
 
-            <div class="campo">
-                <label>Prioridad</label>
-                <p>
-                    <span class="prioridad <?= $incidencia['prioridad'] ?>">
-                        <?= $incidencia['prioridad'] ?>
-                    </span>
-                </p>
-            </div>
+        <div>
+            <h4>Prioridad</h4>
+            <p> <?= $incidencia['prioridad'] ?> </p>
+        </div>
 
-            <div class="footer-btn">
-                <a href="listar.php" class="btn btn-secondary">← Regresar al listado</a>
-            </div>
+        <div>
+            <a href="listar.php">← Regresar al listado</a>
         </div>
     </div>
 
