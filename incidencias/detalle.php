@@ -42,12 +42,14 @@ $incidencia = mysqli_fetch_assoc($resultado);
 
     <!-- Barra de navegación -->
     <div>
-        <h1>Sistema de Tickets</h1>
+        <h2>Sistema de Tickets</h2>
         <div>
-            <?= $_SESSION['usuario_nombre'] ?>
+            Usuario: <?= $_SESSION['usuario_nombre'] ?><br><br>
             <a href="cerrar_sesion.php">Cerrar Sesión</a>
         </div>
     </div>
+
+    <hr>
 
     <div>
         <h3>Detalle de Incidencia</h3>
