@@ -12,13 +12,15 @@ session_destroy();
 </head>
 
 <body>
-    <h1>Sistema de Tickets</h1>
+    <h2>Sistema de Tickets</h2>
     <hr>
-    <h2>🔴 Error 500 – Internal Server Error</h2>
+    <div style="color: #FF0000">
+        <h1>Error 500 – Internal Server Error</h1>
+    </div>
     <p>Ocurrió un problema interno en el servidor.</p>
     <p>Tu sesión ha sido cerrada por seguridad.</p>
     <br>
-    <a href="index.php">← Ir al Login</a>
+    <a href="index.php">Ir al Login</a>
 </body>
 
 </html>

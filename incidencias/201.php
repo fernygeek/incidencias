@@ -15,11 +15,13 @@ http_response_code(201);
 </head>
 
 <body>
-    <h1>Sistema de Tickets</h1>
-    <p>Bienvenido: <?= $_SESSION['usuario_nombre'] ?></p>
+    <h2>Sistema de Tickets</h2>
+    <p>Usuario: <?= $_SESSION['usuario_nombre'] ?></p>
     <a href="cerrar_sesion.php">Cerrar Sesión</a>
     <hr>
-    <h2>✅ Incidencia Creada – 201 Created</h2>
+    <div style="color: #15931c">
+        <h1>Incidencia Creada – 201 Created</h1>
+    </div>
     <p>Tu incidencia fue registrada exitosamente.</p>
     <br>
     <a href="listar.php">Ver mis incidencias</a>

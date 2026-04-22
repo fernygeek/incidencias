@@ -17,12 +17,14 @@ unset($_SESSION['errores']);
 </head>
 
 <body>
-    <h1>Sistema de Tickets</h1>
-    <p>Bienvenido: <?= $_SESSION['usuario_nombre'] ?></p>
+    <h2>Sistema de Tickets</h2>
+    <p>Usuario: <?= $_SESSION['usuario_nombre'] ?></p>
     <a href="cerrar_sesion.php">Cerrar Sesión</a>
     <hr>
-    <h2>⚠️ Error 400 – Bad Request</h2>
-    <p>Los datos enviados no son válidos:</p>
+    <div style="color: #FF0000">
+        <h1>Error 400 – Bad Request</h2>
+    </div>
+    <p>Los datos enviados no son válidos</p>
     <?php if (!empty($errores)): ?>
         <ul>
             <?php foreach ($errores as $error): ?>
@@ -31,7 +33,7 @@ unset($_SESSION['errores']);
         </ul>
     <?php endif; ?>
     <br>
-    <a href="registrar.php">← Volver al formulario</a>
+    <a href="registrar.php">Volver al formulario</a>
 </body>
 
 </html>
