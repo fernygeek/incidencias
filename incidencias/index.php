@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require 'conexion.php';
 
     $email = $_POST['email'];
-    $clave = MD5($_POST['clave']);
+    $clave = $_POST['clave'];
 
     $sql = "SELECT * FROM usuario WHERE email='$email' AND clave='$clave'";
     $resultado = mysqli_query($conexion, $sql);
