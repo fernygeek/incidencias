@@ -1,5 +1,10 @@
 <?php
 
+if (!isset($_SESSION['usuario_id']) && !isset($permitir_conexion_desde_login)) {
+    header("Location: index.php?autenticacion=fallo");
+    exit();
+}
+
 $host = "localhost";
 $usuario = "root";
 $clave = "";
