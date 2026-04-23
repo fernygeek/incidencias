@@ -80,19 +80,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div>
             <label>Título *</label>
             <br>
-            <input type="text" style="width: 400px; height: 30px;" name="titulo" placeholder="Ej: Cálculos incorrectos en facturación" required>
+            <input type="text" style="width: 400px; height: 30px;" name="titulo" placeholder="Ej: Cálculos incorrectos en facturación">
         </div>
         <br>
         <div>
             <label>Descripción *</label>
             <br>
-            <textarea name="descripcion" style="width: 400px; height: 100px;" placeholder="Describe el problema con detalle..." required></textarea>
+            <textarea name="descripcion" style="width: 400px; height: 100px;" placeholder="Describe el problema con detalle..."></textarea>
         </div>
         <br>
         <div>
             <label>Prioridad *</label>
             <br>
-            <select name="prioridad" required>
+            <select name="prioridad">
                 <option value="">-- Selecciona una prioridad --</option>
                 <option value="Alta" style="color: red;">Alta</option>
                 <option value="Media" style="color: orange;">Media</option>

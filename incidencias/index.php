@@ -9,6 +9,7 @@ if (isset($_SESSION['usuario_id'])) {
 $error = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $permitir_conexion_desde_login = true;
     require 'conexion.php';
 
     $email = $_POST['email'];
