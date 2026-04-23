@@ -46,12 +46,12 @@ $resultado = mysqli_query($conexion, $sql);
         while ($fila = mysqli_fetch_assoc($resultado)) {
     ?>
             <tr>
-                <td><?php echo $fila['id']; ?></td>
                 <td>
                     <a href="detalle.php?id=<?php echo $fila['id']; ?>">
-                        <?php echo $fila['titulo']; ?>
+                        <?php echo $fila['id']; ?>
                     </a>
                 </td>
+                <td><?php echo $fila['titulo']; ?></td>
             </tr>
     <?php
         }

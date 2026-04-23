@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: index.php?autenticacion=fallo");
+    exit();
+}
+
 http_response_code(500);
 session_destroy();
 ?>
