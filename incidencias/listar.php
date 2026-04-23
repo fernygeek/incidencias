@@ -6,6 +6,14 @@ if (!isset($_SESSION['usuario_id'])) {
     exit();
 }
 
+// Cambiar idioma si se envía desde el formulario
+if (isset($_POST['cambiar_idioma'])) {
+    $_SESSION['idioma'] = $_POST['idioma'];
+    setcookie('idioma', $_POST['idioma'], time() + (365 * 24 * 60 * 60), '/');
+}
+
+$idioma = isset($_SESSION['idioma']) ? $_SESSION['idioma'] : (isset($_COOKIE['idioma']) ? $_COOKIE['idioma'] : 'es');
+
 require 'conexion.php';
 
 $usuario_id = $_SESSION['usuario_id'];
@@ -18,6 +26,17 @@ $resultado = mysqli_query($conexion, $sql);
     <title>Mis Incidencias</title>
 </head>
 <body>
+
+<div style="text-align: right; margin: 10px;">
+    <form method="POST" style="display: inline;">
+        <label for="idioma">Idioma:</label>
+        <select name="idioma" id="idioma" onchange="this.form.submit();">
+            <option value="es" <?= $idioma === 'es' ? 'selected' : '' ?>>Español</option>
+            <option value="en" <?= $idioma === 'en' ? 'selected' : '' ?>>English</option>
+        </select>
+        <input type="hidden" name="cambiar_idioma" value="1">
+    </form>
+</div>
 
 <h2>Sistema de Tickets</h2>
 
