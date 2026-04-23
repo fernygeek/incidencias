@@ -75,7 +75,7 @@ $incidencia = mysqli_fetch_assoc($resultado);
         </div>
 
         <div>
-            <a href="listar.php">← Regresar al listado</a>
+            <a href="listar.php">Regresar al listado</a>
         </div>
     </div>
 
